@@ -10,6 +10,7 @@ import math
 """Ejercicio 1Permalink
 Realizar un programa que inicialice una lista con 10 valores aleatorios (del 1 al 10) y posteriormente muestre en pantalla cada elemento de la lista junto con su cuadrado y su cubo.
 """
+"""
 
 listaAleatoria = []
 
@@ -21,33 +22,34 @@ print(listaAleatoria)
 
 for i in listaAleatoria:
     print(i,int(math.pow(i, 2)),int(math.pow(i, 3)))
+"""
 
 
 """Ejercicio 2Permalink
 Crea una lista e inicializala con 5 cadenas de caracteres leídas por teclado. Copia los elementos de la lista en otra lista pero en orden inverso, y muestra sus elementos por la pantalla.
 """
-
+"""
 listaCaracteres = []
 listaCaracteres2 = []
-"""
+
 for i in range(1,6):
     listaCaracteres += [input("Cadena " + str(i) + ":")]
 
 listaCaracteres2 = listaCaracteres.copy()
 listaCaracteres2.reverse()
-"""
+
 print(listaCaracteres)
 
 print(listaCaracteres2)
-
+"""
 """Ejercicio 3Permalink
 Se quiere realizar un programa que lea por teclado las 5 notas obtenidas por un alumno
 (comprendidas entre 0 y 10). A continuación debe mostrar todas las notas, la nota media,
 la nota más alta que ha sacado y la menor.
 """
-
-listaNotas = []
 """
+listaNotas = []
+
 
 for i in range(1,6):
     nota = 0
@@ -70,6 +72,7 @@ Programa que declare una lista y la vaya llenando de números
 hasta que introduzcamos un número negativo. Entonces se debe imprimir el vector
 (sólo los elementos introducidos).
 """
+"""
 listaNumerosPositivos = []
 
 while True:
@@ -81,31 +84,124 @@ while True:
     
 print(listaNumerosPositivos)
     
-
+"""
 
 
 """Ejercicio 5Permalink
-Hacer un programa que inicialice una lista de números con valores aleatorios (10 valores), y posterior ordene los elementos de menor a mayor.
+Hacer un programa que inicialice una lista de números con valores aleatorios
+(10 valores), y posterior ordene los elementos de menor a mayor.
 """
+
+"""
+listaAleatoria5 = []
+
+for i in range(1, 11):
+    listaAleatoria5 += [random.randrange(1, 10)]
+
+listaAleatoria5.sort();
+
+print(listaAleatoria5)
+"""
+
 """Ejercicio 6Permalink
-Crea un programa que pida un número al usuario un número de mes (por ejemplo, el 4) y diga cuántos días tiene (por ejemplo, 30) y el nombre del mes. Debes usar listas. Para simplificarlo vamos a suponer que febrero tiene 28 días.
+Crea un programa que pida un número al usuario un número de mes
+(por ejemplo, el 4) y diga cuántos días tiene
+(por ejemplo, 30) y el nombre del mes. Debes usar listas.
+Para simplificarlo vamos a suponer que febrero tiene 28 días.
 """
+"""
+meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Ovtubre","Noviembre","Diciembre"]
+diasPorMes = [30,28,30,30,30,30,30,30,30,30,30,30]
+
+mes = int(input("Ingrese el número del mes:"))
+
+print(meses[mes-1] + " tiene " + str(diasPorMes[mes-1]) + " días")
+
+"""
+
 """Ejercicio 7Permalink
-Programa que declare tres listas ‘lista1’, ‘lista2’ y ‘lista3’ de cinco enteros cada uno, pida valores para ‘lista1’ y ‘lista2’ y calcule lista3=lista1+lista2.
+Programa que declare tres listas ‘lista1’, ‘lista2’ y ‘lista3’
+de cinco enteros cada uno, pida valores para ‘lista1’ y ‘lista2’ y calcule lista3=lista1+lista2.
 """
+"""
+lista1 = [1,2,3,4,6]
+lista2 = [6,7,8,9,10]
+lista3=[]
+lista3 = lista1+lista2
+print(lista3)
+"""
+
 """Ejercicio 8Permalink
-Queremos guardar los nombres y la edades de los alumnos de un curso. Realiza un programa que introduzca el nombre y la edad de cada alumno. El proceso de lectura de datos terminará cuando se introduzca como nombre un asterisco (*) Al finalizar se mostrará los siguientes datos:
+Queremos guardar los nombres y la edades de los alumnos de un curso.
+Realiza un programa que introduzca el nombre y la edad de cada alumno.
+El proceso de lectura de datos terminará cuando se introduzca como nombre un asterisco (*)
+Al finalizar se mostrará los siguientes datos:
 
 Todos lo alumnos mayores de edad.
-Los alumnos mayores (los que tienen más edad)
 """
-"""Ejercicio 9Permalink
-Queremos guardar la temperatura mínima y máxima de 5 días. Realiza un programa que de la siguiente información:
+"""
+listaNombres = []
+listaEdades = []
+i = 1
+resSeguir = ""
 
-La temperatura media de cada día
-Los días con menos temperatura
-Se lee una temperatura por teclado y se muestran los días cuya temperatura máxima coincide con ella. si no existe ningún día se muestra un mensaje de información.
+while True:
+    listaNombres += [input("Ingrese el nombre del alumno " + str(i)+ " :") ]
+    listaEdades += [int(input("Ingrese la edad del alumno " + str(i)+ " :"))]
+    resSeguir = input("¿Desea realizar otra lectura?:")
+    if resSeguir == "*":
+        break
+    i+=1
+    
+print(listaNombres)
+print(listaEdades)
+for nombre, edad in zip(listaNombres,listaEdades):
+    if edad >= 18:
+        print(nombre, edad)
+    
+
 """
+
+"""Ejercicio 9Permalink
+Queremos guardar la temperatura mínima y máxima de 5 días. 
+Realiza un programa que de la siguiente información:
+
+*La temperatura media de cada día
+*Se lee una temperatura por teclado y se muestran los días cuya 
+temperatura máxima coincide con ella. si no existe ningún día se 
+muestra un mensaje de información.
+"""
+"""
+
+temperaturas = []
+
+for i in range(1,3):
+    dia = input("Día:")
+    temMax = float(input("Temp max " + dia + ":"))
+    temMin = float(input("Temp min " + dia + ":"))
+    temperaturas += [(dia+";"+str(temMax)+";"+str(temMin))]
+    
+    
+print("---Temp media---")
+for tem in temperaturas:
+    aux = tem.split(";")
+    print(aux[0] +":" + str((float(aux[1])+float(aux[2])) / 2))
+
+print("---Coincidencia Temp---")
+tempBus = float(input("Temperarura a buscar:"))
+existe = False
+for tem in temperaturas:
+    aux = tem.split(";")
+    if(float(aux[1]) == tempBus):
+       print(aux[0])   
+       existe = True
+
+if(not(existe)):
+    print("No existe ninguna temp que haga match")       
+      
+"""
+
+
 
 """
 Ejercicio 10Permalink
@@ -113,8 +209,38 @@ Diseñar el algoritmo correspondiente a un programa, que:
 
 Crea una tabla (lista con dos dimensiones) de 5x5 enteros.
 Carga la tabla con valores numéricos enteros.
-Suma todos los elementos de cada fila y todos los elementos de cada columna visualizando los resultados en pantalla.
+Suma todos los elementos de cada fila y todos los elementos de cada columna 
+visualizando los resultados en pantalla.
 """
+tabla = []
+tablaaux = []
+tablaResFila = []
+tablaResColumna = []
+sumaFila = 0
+
+for i in range(0,2):  
+    tablaaux.clear()
+    sumaFila = 0
+    for j in range(0,5):
+        tablaaux += [int(input("Valor (" + str(i) + "," + str(j) + ") :" ))]
+        sumaFila += tablaaux[j]
+    tablaResFila += [sumaFila]
+    tabla += [tablaaux.copy()]
+
+for i in range(0,2): 
+    for j in range(0,5):
+        if(len(tablaResColumna) < 5):
+            tablaResColumna += [tabla[i][j]]
+        else:
+            tablaResColumna[j] += tabla[i][j]
+            
+
+    
+print(tabla)
+print(tablaResFila)
+print(tablaResColumna)
+
+
 """Ejercicio 11Permalink
 Diseñar el algoritmo correspondiente a un programa, que:
 
