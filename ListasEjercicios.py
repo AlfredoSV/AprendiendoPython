@@ -212,6 +212,7 @@ Carga la tabla con valores numéricos enteros.
 Suma todos los elementos de cada fila y todos los elementos de cada columna 
 visualizando los resultados en pantalla.
 """
+"""
 tabla = []
 tablaaux = []
 tablaResFila = []
@@ -239,17 +240,36 @@ for i in range(0,2):
 print(tabla)
 print(tablaResFila)
 print(tablaResColumna)
-
+"""
 
 """Ejercicio 11Permalink
 Diseñar el algoritmo correspondiente a un programa, que:
 
 Crea una tabla bidimensional de longitud 5x5 y nombre ‘diagonal’.
-Carga la tabla de forma que los componentes pertenecientes a la diagonal de la matriz tomen el valor 1 y el resto el valor 0.
+Carga la tabla de forma que los componentes pertenecientes a la diagonal
+de la matriz tomen el valor 1 y el resto el valor 0.
 Muestra el contenido de la tabla en pantalla.
 
 """
 
+diagonal = []
+aux = []
+
+d = 5
+
+for i in range(0,d):
+    aux = [0]*d
+    aux[i] = 1
+    aux[(d-1)-i] = 1
+    if(i == (int)(d/2)):
+        aux[(int)(d/2)] = 1
+    diagonal += [aux]
+
+for di in range(0,d):
+    print (diagonal[di])
+    
+  
+    
 """Ejercicio 12Permalink
 Diseñar el algoritmo correspondiente a un programa, que:
 
