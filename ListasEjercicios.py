@@ -286,9 +286,10 @@ Visualiza el contenido de la matriz en pantalla.
 
 """
 
+"""
 
 y = 10
-x = 15
+x = 20
 
 listaFinal = []
 listaAux = []
@@ -307,20 +308,46 @@ for j in range(0,y):
     print(listaFinal[j])
         
     
+"""
 
 
 
 """Ejercicio 13Permalink
-De una empresa de transporte se quiere guardar el nombre de los conductores que tiene, y los kilómetros que conducen cada día de la semana.
+De una empresa de transporte se quiere guardar el nombre de los conductores que tiene,
+y los kilómetros que conducen cada día de la semana.
 
 Para guardar esta información se van a utilizar dos arreglos:
 
 Nombre: Lista para guardar los nombres de los conductores.
 kms: Tabla para guardar los kilómetros que realizan cada día de la semana.
-Se quiere generar una nueva lista (“total_kms”) con los kilómetros totales que realza cada conductor.
+Se quiere generar una nueva lista (“total_kms”) con los kilómetros totales que
+realza cada conductor.
 
-Al finalizar se muestra la lista con los nombres de conductores y los kilómetros que ha realizado.
+Al finalizar se muestra la lista con los nombres de conductores y los kilómetros 
+que ha realizado.
 """
+
+listaNombres = ["Alfredo","Jorge","Alejandro"]
+
+#5 días laborales, 15 por fila
+listadiasKm = [[34,68,12,334,34],[34,68,12,334,31],[34,68,12,334,30]]
+
+listaTotalesKm = []
+
+for i,j in zip(listaNombres,listadiasKm):
+    suma = 0
+    for h in j:
+        suma+=h
+    listaTotalesKm += [[i,(str(suma)+ "km")]]
+    
+    
+print(listaTotalesKm)
+        
+
+
+
+
+
 
 """Ejercicio 14Permalink
 Crear un programa que lea los precios de 5 artículos y las cantidades vendidas por una empresa en sus 4 sucursales. Informar:
