@@ -251,7 +251,7 @@ de la matriz tomen el valor 1 y el resto el valor 0.
 Muestra el contenido de la tabla en pantalla.
 
 """
-
+"""
 diagonal = []
 aux = []
 
@@ -268,7 +268,8 @@ for i in range(0,d):
 for di in range(0,d):
     print (diagonal[di])
     
-  
+
+"""
     
 """Ejercicio 12Permalink
 Diseñar el algoritmo correspondiente a un programa, que:
@@ -284,6 +285,30 @@ Carga la tabla con dos únicos valores 0 y 1, donde el valor uno ocupará las po
 Visualiza el contenido de la matriz en pantalla.
 
 """
+
+
+y = 10
+x = 15
+
+listaFinal = []
+listaAux = []
+
+for i in range(0,y):
+    if(i == 0 or i == y-1):
+        listaAux = [1] * x
+    else:
+        listaAux = [0] * x
+        listaAux[0] = 1
+        listaAux[x-1] = 1
+        
+    listaFinal += [listaAux]
+    
+for j in range(0,y):
+    print(listaFinal[j])
+        
+    
+
+
 
 """Ejercicio 13Permalink
 De una empresa de transporte se quiere guardar el nombre de los conductores que tiene, y los kilómetros que conducen cada día de la semana.
